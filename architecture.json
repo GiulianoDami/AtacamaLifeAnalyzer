@@ -1,0 +1,37 @@
+{
+    "language": "Rust",
+    "dependency_file": "Cargo.toml",
+    "dependencies": ["clap", "serde", "serde_json", "csv"],
+    "files": [
+        {
+            "path": "src/main.rs",
+            "description": "Entry point and command-line argument parsing",
+            "exports": ["fn main()", "struct Args"]
+        },
+        {
+            "path": "src/analyzer.rs",
+            "description": "Core logic for analyzing soil biodiversity data",
+            "exports": ["fn analyze_data(&str, &str)", "struct AnalysisResult"]
+        },
+        {
+            "path": "src/data_processor.rs",
+            "description": "Processes and validates input CSV data",
+            "exports": ["fn process_csv(&str)", "struct SoilSample"]
+        },
+        {
+            "path": "src/models.rs",
+            "description": "Data models and structures used throughout the application",
+            "exports": ["struct SoilSample", "struct AnalysisResult", "enum ReproductionStrategy"]
+        },
+        {
+            "path": "src/cli.rs",
+            "description": "Command line interface definitions and helpers",
+            "exports": ["fn parse_args()", "struct Args"]
+        },
+        {
+            "path": "src/lib.rs",
+            "description": "Library entry point exposing public APIs",
+            "exports": ["mod analyzer", "mod data_processor", "mod models", "mod cli"]
+        }
+    ]
+}
